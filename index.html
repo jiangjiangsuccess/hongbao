@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>集字抢红包</title>
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	function prevSrcoll(e){
+		e.preventDefault();
+	}
+	document.addEventListener("touchmove", prevSrcoll, false);
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="zhuangshi"><img src="images/zhuangshi.png" alt="zhuangshi" /></div>
+		<div class="num"><span>2230</span>人已经集齐</div>
+		<div class="guize_2"><img src="images/guize2.png" alt="" /></div><!--新加-->
+		<div class="jiren"><img src="images/open_time.png" alt="wenti" /></div><!--改动-->
+		<div class="huawen"><img src="images/huawen.png" alt="huawen" /></div>
+		<div class="dikuang">
+			<p>红包池金额<span>1000</span>元</p>
+		</div>
+		<div class="guize"><img src="images/text2.png" alt="guize" /></div><!--改动-->
+		<div class="btn">
+			<img src="images/hongbaopi.png" alt="" />
+<!--			<img src="images/open_time.png" class="open_time" alt=""/>--><!--去掉-->
+			<img src="images/btn1.png" class="btn1" alt="" />
+			<img src="images/btn2.png" class="btn2" alt="" />
+			<img src="images/btn3.png" class="btn3" alt="" />
+		</div>
+		<div class="jizi">
+			<div class="dong">
+				<img src="images/dong.png" alt="" />
+				<img src="images/dong_f.png" alt="" />
+			</div>
+			<div class="fang">
+				<img src="images/fang.png" alt="" />
+				<img src="images/fang_f.png" alt="" />
+			</div>
+			<div class="qi">
+				<img src="images/qi.png" alt="" />
+				<img src="images/qi_f.png" alt="" />
+			</div>
+			<div class="che">
+				<img src="images/che.png" alt="" />
+				<img src="images/che_f.png" alt="" />
+			</div>
+		</div>
+		<!--朋友助力界面-->
+<!--
+		<div class="zhuli">
+			<div class="help"><img src="images/btn4.png" class="btn4" alt="" /></div>
+			<div class="action"><img src="images/btn5.png" class="btn5" alt="" /></div>
+		</div>
+-->
+		<div class="logo"><img src="images/logo.png" alt="logo" /></div>
+		<!--友情帮助-->
+<!--
+		<div class="hs">
+			<div class="hs_nei">
+				<div class="hs_t">帮助成功</div>
+				<div class="small_logo"><img src="images/logo_x.png" alt="" /></div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+-->
+		<!--粉丝专属-->
+		<div id="mcover" onclick="hideShare();">
+            <img src="images/sharetips.png" width="100%" class="sharepic" alt="" />
+            <img src="images/shareplay.png" width="100%" class="shareplay" alt="" />
+        </div>
+		<!--注册页-->
+		<div class="zhuce">
+			<div class="zhuce_nei">
+				<form action="#">
+					<input type="text" name="userName" class="name" placeholder="输入您的姓名">
+					<input type="tel" name="tell" class="call" placeholder="输入您的手机号码">
+					<p>为了您能更好的参与活动，请填写正确的姓名以及手机号码。</p>
+					<button>提交信息</button>
+				</form>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+		<!--活动规则-->
+		<div class="guize_n">
+			<div class="guize_nei">
+				<p>活动规则</p>
+				<div class="xiang">
+					<p>活动时间：</p>
+					<p>即日起至2017年5月1日16：00</p>
+					<p>活动规则说明：</p>
+					<p><span>集齐“东方汽车”四个字</span>即可获取现金红包，红包金额随机，数量有限，先到先得，抢完为止，
+						每人仅限领取1次红包。随着集齐人数的增加，红包池金额也会发生变化具体如下：</p>
+					<p>集齐用户达到500人，红包池金额1000元</p>
+					<p>集齐用户达到1000人，红包池金额2000元</p>
+					<p>集齐用户达到2000人，红包池金额4000元</p>
+					<p>集齐用户达到3000人，红包池金额6000元</p>
+					<p>粉丝专属按钮为关注礼，通过<span>“江苏东方汽车”（auto_96056）</span>订阅号可获得“车”字；</p>
+					<p>呼朋唤友来帮忙集齐其他三个字吧，全部集齐后可于5月1日上午10:00整点击抢红包按钮，开自己的幸运红包
+						<span>（活动于5月1日16:00结束，结束后将无法领取红包，不要忘记哦！）</span></p>
+				</div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+		<!--提示不能抢-->
+		<div class="cannot">
+			<div class="cannot_nei">
+				<div class="tishi">5月1日开启抢红包</div>
+				<div class="small_logo"><img src="images/logo_x.png" alt="" /></div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+		<!--抢红包界面-->
+		<div class="qiang">
+			<div class="qiang_nei">
+				<div class="hongyun"><img src="images/hongyun.png" alt="" /></div>
+				<div class="open"><img src="images/open.png" alt="" /></div>
+				<div class="jine">恭喜您抢到<span>6.98</span>元</div>
+				<div class="small_logo"><img src="images/logo_x.png" alt="" /></div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+		<!--抢光了界面-->
+		<div class="guang">
+			<div class="guang_nei">
+				<div class="xiaoji"><img src="images/xiaoji.png" alt="" /></div>
+				<div class="wuwu"><img src="images/wuwu.png" alt="" /></div>
+				<div class="small_logo"><img src="images/logo_x.png" alt=""></div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+		<!--抢过了界面-->
+		<div class="guole">
+			<div class="guole_nei">
+				<div class="xiaoji"><img src="images/xiaoji.png" alt="" /></div>
+				<div class="liudian"><img src="images/guole.png" alt="" /></div>
+				<div class="small_logo"><img src="images/logo_x.png" alt=""></div>
+			</div>
+			<div class="close"><img src="images/close.png" alt="" /></div>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			getHeight();
+			close();
+			getZi();
+			setH();
+			canjia();
+			cannot();
+			share();
+		});
+		function getHeight(){
+			var w = $(window).outerWidth();
+			var x = 84 * 0.74 * w / 473;
+			var w2 = w * 0.13;
+			var w3 = $(".jizi").width();
+			var m = (w3 - 4 * w2) / 5;
+			var h2 = 0.66 * 668 * w / 424;
+			console.log(w3);
+			$(".dikuang").css("height", x + "px");
+			$(".dikuang p").css("line-height", x + "px");
+			$(".jizi>div").css("width", w2 + "px");
+			$(".jizi>div").css("height", w2 + "px");
+			$(".jizi>div").css("margin-left", m + "px");
+			$(".zhuce_nei,.qiang_nei,.guang_nei,.guole_nei,.cannot_nei,.hs_nei").css("height", h2 + "px");
+		};
+		//参加活动
+		function canjia(){
+			$(".btn5").click(function(){
+				$(".zhuli").css("display","none");
+				$(".btn").css("display","block");
+				$(".jizi").css("display","block");
+			});
+			$(".btn4").click(function(){
+				$(".hs").css("display","block");
+			});
+		};
+		//分享
+		function share(){
+			$(".btn3").click(function(){
+				$("#mcover").css("display","block");
+			})
+		}
+		//关闭注册页
+		function close(){
+			$(".dikuang").click(function(){
+				$(".zhuce").css("display","block");
+			});
+			$(".close").on("click",function(){
+				$(this).parent().css("display","none");
+				document.addEventListener("touchmove", prevSrcoll, false);
+			});
+			$(".guize_2").on("click",function(){//选择器换
+				document.removeEventListener("touchmove", prevSrcoll, false);
+				$(".guize_n").css("display","block")
+			});
+			
+		};
+		//抢红包没开启
+		function cannot(){
+			$(".btn1").click(function(){
+				$(".cannot").css("display","block");
+			});
+		}
+		//抢红包界面
+		function qiang(){
+			$(".btn1").click(function(){
+				$(".qiang").css("display","block");
+			});
+			open();
+		}
+		//开红包
+		function open(){
+			$(".open").on("click",function(){
+				$(this).addClass("open2");
+				setTimeout(function(){
+					$(".open").css("display","none");
+					$(".jine").css("display","block")
+				},2000);
+				guole();
+			})
+		}
+		//抢过了
+		function guole(){
+			$(".btn1").click(function(){
+				$(".guole").css("display","block");
+			})
+		}
+		//集字
+		function getZi(){
+			$(".btn2").on("click",function(){
+				$(".jizi>div img:nth-child(2)").css("display","none");
+				$(".jizi>div img:nth-child(1)").css("display","block");
+				qiang();
+			})
+		};
+		//友情隐藏
+		function hideShare(){
+			$("#mcover").hide();
+		}
+		//ios5
+		function setH(){
+			var w = $(window).outerWidth();
+			var h = $(window).outerHeight();
+			if(w / h > 0.563){
+				$(".guize_nei>p").css("margin","10px 0 5px 0");
+				$(".xiang").css("height","84%");
+			}
+		}
+		
+	</script>
+</body>
+</html>

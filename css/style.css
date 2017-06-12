@@ -1,0 +1,88 @@
+/* CSS Document */
+html,body{padding:0;margin:0;}
+p{margin:0;padding:0;}
+img{width:100%;}
+.container{position:absolute;width:100%;height:100%;background:url(../images/bg.jpg) no-repeat;background-size:100% 100%;}
+.zhuangshi{position:absolute;width:76.4%;left:11.8%;top:11.3%;}
+.num{position:absolute;width:100%;top:3.5%;text-align: center;font-size:14px;color:#8a4a02;}
+.jiren{position:absolute;width:59.6%;left:20.2%;top:6.7%;}/*改*/
+.huawen{position:absolute;width:59%;left:20.5%;top:11.8%;}
+.dikuang{position:absolute;width:74%;left:13%;top:18%;background:url(../images/dikuang.png) no-repeat;background-size:100%;}
+.dikuang p{text-align: center;font-family:"microsoft yahei";color:#b9ac9b;font-size:22px;}/*改*/
+.guize{position:absolute;width:45.2%;left:27.4%;top:27%;}/*改*/
+.guize_2{position:absolute;width:11.7%;top:2.3%;right:3.1%}/*添加*/
+.btn{position:absolute;width:74.4%;left:12.8%;top:32.5%;height:35%;}
+.open_time{position:absolute;width:80%;left:10%;top:32%;}
+.btn1{position:absolute;width:100%;left:0;top:11.3%;}
+.btn2{position:absolute;width:100%;left:0;top:47.5%;}
+.btn3{position:absolute;width:100%;left:0;bottom:0;}
+.jizi{position:absolute;width:74.4%;left:12.8%;top:74%;}
+.jizi>div{float:left;background:url(../images/zidikuang.png) no-repeat;background-size:100%;position:relative;}
+.jizi>div img{position:absolute;top:0;left:0;}
+.jizi>div img:nth-child(1){display:none;}
+.logo{position:absolute;width:22.2%;left:38.9%;top:90.5%;}
+/*zhuce*/
+.zhuce{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.close{position:absolute;width:6.7%;right:30px;top:30px;}
+.close2{position:absolute;width:6.7%;right:30px;top:30px;}
+.zhuce_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.name{background:transparent;border:1px solid #a94703;width:78%;height:30px;margin:34% auto 0;display:block;color:#a94703;padding-left:5px;box-sizing:border-box;-webkit-appearance: none;outline: none;}
+.call{background:transparent;border:1px solid #a94703;width:78%;height:30px;margin:20px auto 0;display:block;color:#a94703;padding-left:5px;box-sizing:border-box;-webkit-appearance: none;outline: none;}
+.zhuce_nei p{width:78%;margin:10px auto 0;font-size:14px;font-family:"microsoft yahei";color:#a94703;}
+.zhuce_nei button{position:absolute;background:#a94703;font-family:"microsoft yahei";font-size:20px;padding:5px 0;color:#000;border:none;border-radius:5px;bottom:60px;width:47%;left:26.5%;}
+/*guize*/
+.guize_n{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.guize_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100% 100%;height:66.6%;}
+.guize_nei>p{text-align:center;margin:30px 0 10px 0;}
+.xiang{width:90%;margin:0 auto;border:1px solid #a94703;height:82%;overflow:scroll;padding:5px 0;}
+.xiang p{font-family:"microsoft yahei";font-size:12px;color:#a94703;padding:2px 5px;line-height:20px;}
+.xiang p span{color:green;}
+.zhuli{position:absolute;width:74.4%;left:12.8%;top:49%;height:22%;}
+.help{position:absolute;width:100%;left:0;top:0;}
+.action{position:absolute;width:100%;left:0;bottom:0;}
+/*抢红包*/
+.qiang{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.qiang_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.hongyun{position:absolute;width:66%;left:17%;top:16.5%;}
+.open{position:absolute;width:28%;left:36%;top:60%;-webkit-transform:rotateY(0);-webkit-transition:all 2s linear;}
+.small_logo{position:absolute;width:28%;left:36%;bottom:20px;}
+.jine{text-align: center;margin-top:100%;font-family:"microsoft yahei";color:#a94703;font-size:18px;display: none;}
+.open2{-webkit-transform:rotateY(720deg);}
+/*抢光界面*/
+.guang{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.guang_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.xiaoji{width:47.6%;margin:30% auto 0;}
+.wuwu{width:71%;margin:40px auto 0;}
+/*抢过了界面*/
+.guole{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.guole_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.liudian{width:72.2%;margin:40px auto 0;}
+/*不能抢红包提示*/
+.cannot{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.cannot_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.tishi{text-align:center;font-family:"microsoft yahei";color:#a94703;font-size:16px;margin-top:80px;}
+/*粉丝专属*/
+#mcover{position:fixed; top:0;left:0; width:100%;height:100%;background:rgba(0,0,0,0.8);display:none; z-index:20000;}
+#mcover .sharepic{position:absolute;left:0;top:0;width:100%;z-index:20001;border:0;}
+#mcover .shareplay{position:absolute;right:10px;top:16px;width:16%;z-index:20001;border:0;opacity:1; -webkit-animation:sharePlay ease-in-out 2s infinite;}
+@-webkit-keyframes sharePlay {
+	0%,5%,20%,40%,50%,58%,60%,62%,70%,72%,90%,100%{-webkit-transform-origin:center center; }
+	0%  {-webkit-transform:translate(0,0) rotate(0deg);}
+	5%  {-webkit-transform:translate(0,0) rotate(0deg);}
+	20% {-webkit-transform:translate(0,0) rotate(0deg);}
+	40% {-webkit-transform:translate(0,0) rotate(388deg);}
+	50% {-webkit-transform:translate(0,0) rotate(388deg);}
+	58% {-webkit-transform:translate(0,-15px) rotate(388deg);}
+	60% {-webkit-transform:translate(0,0) rotate(388deg);}
+	62% {-webkit-transform:translate(0,0) rotate(388deg);}
+	70% {-webkit-transform:translate(0,-15px) rotate(388deg);}
+	72% {-webkit-transform:translate(0,0) rotate(388deg);}
+	80% {-webkit-transform:translate(0,0) rotate(388deg);}
+	100%{-webkit-transform:translate(0,0) rotate(0deg);}
+}
+/*友情帮助*/
+.hs{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+.hs_nei{position:absolute;width:66%;left:17%;top:20%;background:url(../images/zhu_bg.png) no-repeat;background-size:100%;}
+.hs_t{text-align:center;font-family:"microsoft yahei";color:#a94703;font-size:16px;margin-top:80px;}
+/*附属页*/
+.sure{width:80px;text-align: center;display:block;padding:5px 0;font-family:"microsoft yahei";font-size:16px;background:#a94703;text-decoration: none;color:#333;border-radius:5px;margin:60px auto 0;}

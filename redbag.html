@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <style>
+        html,body,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,button,fieldset,legend,img,ul,ol,li,dl,dt,dd,th,       td,pre,blockquote{margin:0;padding:0}
+        body,html{font-size:20px;}
+        img{width:100%;}
+        .container{position:absolute;width:100%;height:100%;background:url(images/bg.jpg) no-repeat;background-size:100% 100%;}
+        .header_num{color:#6e3b04;font-size:0.625rem;position:absolute;width:100%;top:1rem;
+            text-align: center;}
+        .header_activity{position: absolute;top:0.55rem;right:0.5rem;width:1.875rem;}
+        .header_start{position:absolute;top:1.95rem;left:3.2rem;width:9.55rem;}
+        .zhuangshi{position:absolute;top:3rem;left:2rem;width:12.25rem;}
+        .huawen{position:absolute;top:3.15rem;left:3.2rem;width:9.45rem;}
+        .dikuang{background: url(images/dikuang.png) no-repeat;position:absolute;top:4.6rem;left:2rem;
+        width:11.85rem;background-size:100%;height:2.1rem;line-height:2.1rem;}
+        .dikuang p{font-size:0.94rem;text-align: center;color:#9d8b74;}
+        .text2{position:absolute;top:7.05rem;left:4.4rem;width:7.225rem;}
+        .btn{position:absolute;top:8.2rem;left:2rem;width:11.95rem;}
+        .btn1{position:absolute;top:1.05rem;}
+        .btn2{position:absolute;top:4.15rem;}
+        .btn3{position:absolute;top:7.05rem;}
+        .jizi{position:absolute;top:18.625rem;left:2.65rem;}
+        .dong{position:absolute;top:0;left:0;}
+        .fang{position:absolute;top:0;left:2.85rem;}
+        .qi{position:absolute;top:0;left:5.7rem;}
+        .che{position:absolute;top:0;left:8.55rem;}
+        .jizi>div{background:url(images/zidikuang.png) no-repeat;background-size:100% 100%;width:2.1rem;
+            height:2.1rem;}
+        .logo{position:absolute;bottom:1.4rem;left:6.2rem;width:3.6rem;}
+        .jizi>div img:nth-child(1){display:none;}
+        /*注册页*/
+        .register{position:absolute;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;}
+        .page{position:absolute;top:5.25rem;left:2.75rem;width:10.6rem;height:16.7rem;background: url(images/zhu_bg.png) no-repeat;background-size:100%;}
+        .userName{position:absolute;top:3.85rem;left:1.05rem;outline:none;border:1px solid #a94703;
+            height:0.95rem;line-height:0.95rem; background:transparent;width:8.35rem;padding-left:5px;}
+        .tel{position:absolute;top:5.75rem;left:1.05rem;outline: none;background:transparent;
+            border:1px solid #a94703;height:0.95rem;line-height:0.95rem;width:8.35rem;}
+        .register .page p{position:absolute;top:7.3rem;left:1.05rem;font-size:0.4rem;color:#c26d02;
+            width:8.35rem;}
+        .page button{position:absolute;bottom:1.5rem;left:2.85rem;width:5rem;height:1.2rem;
+            background-color:#a94703;border:none;border-radius:5px;font-size:0.75rem;}
+        .close{background:url(images/close.png) no-repeat;width:1.075rem;height:1.125rem;
+        position:absolute;top:1.35rem;right:1.25rem;background-size:100% 100%;}
+        /*活动规则*/
+        .guize{position:absolute;width:100%;height:100%;background:rgba(0,0,0,.6);display: none;}
+        .guize .page h3{text-align: center;color:#a94703;font-family: "微软雅黑";font-size:0.85rem;
+        margin-top:1.5rem;}
+        .guize .page .txt{width:9.25rem;height:13.45rem;border:1px solid #a94703;margin:0.5rem auto 0 auto;
+        overflow: scroll;line-height:1.5;}
+        .guize .page .txt p{font-size:0.4rem;color:#a94703;margin-top:0.5rem;margin-left:5px;margin-right:5px;}
+        .guize .page .txt p span{color:#13a903;}
+        /*抢红包未开启*/
+        .qiang{position:absolute;width:100%;height:100%;background:rgba(0,0,0,.6);display:none}
+        .qiang .page p{color:#b65b03;text-align: center;margin-top:1.5rem;}
+        .qiang .page .logo_x{background:url(images/logo_x.png) no-repeat;width:2.95rem;height:0.75rem;      background-size:100%;position:absolute;left:4rem;top:15rem;}
+        /*开启红包*/
+        .kai{position:absolute;width:100%;height:100%;background:rgba(0,0,0,.6);}
+        .kai .hongyun{width:7rem;2.65rem;margin:2.65rem auto 0;}
+        .kai .open{width:2.95rem;height:2.95rem;margin:4.7rem auto 0;}
+        .kai .logo_x{width:2.95rem;height:0.75rem;margin:2.1rem auto 0;}
+        @keyframes zhuan {
+            0%{transform: rotateY(0deg);}
+            100%{transform: rotateY(720deg);}
+        }
+        @-moz-keyframes zhuan {
+            0%{transform: rotateY(0deg);}
+            100%{transform: rotateY(720deg);}
+        }
+        @-webkit-keyframes zhuan {
+            0%{transform: rotateY(0deg);}
+            100%{transform: rotateY(720deg);}
+        }
+        @-o-keyframes zhuan {
+            0%{transform: rotateY(0deg);}
+            100%{transform: rotateY(720deg);}
+        }
+        .open2{animation:zhuan 2s linear infinite;-moz-animation","zhuan 2s linear infinite;-webkit-animation","zhuan 2s linear infinite;-o-animation","zhuan 2s linear infinite}
+    </style>
+</head>
+<script>
+    !function(win) {
+        function resize() {
+            var domWidth = domEle.getBoundingClientRect().width;
+            if(domWidth / v > 540){
+                domWidth = 540 * v;
+            }
+            win.rem = domWidth / 16;
+            domEle.style.fontSize = win.rem + "px";
+        }
+        var v, initial_scale, timeCode, dom = win.document, domEle = dom.documentElement, viewport = dom.querySelector('meta[name="viewport"]'), flexible = dom.querySelector('meta[name="flexible"]');
+        if (viewport) {
+            //viewport：<meta name="viewport"content="initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5,user-scalable=no,minimal-ui"/>
+            var o = viewport.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);
+            if(o){
+                initial_scale = parseFloat(o[2]);
+                v = parseInt(1 / initial_scale);
+            }
+        } else {
+            if (flexible) {
+                var o = flexible.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);
+                if(o){
+                    v = parseFloat(o[2]);
+                    initial_scale = parseFloat((1 / v).toFixed(2))
+                }
+            }
+        }
+        if (!v && !initial_scale) {
+            var n = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi));
+            v = win.devicePixelRatio;
+            v = n ? v >= 3 ? 3 : v >= 2 ? 2 : 1 : 1, initial_scale = 1 / v
+        }
+        //没有viewport标签的情况下
+        if (domEle.setAttribute("data-dpr", v), !viewport) {
+            if (viewport = dom.createElement("meta"), viewport.setAttribute("name", "viewport"), viewport.setAttribute("content", "initial-scale=" + initial_scale + ", maximum-scale=" + initial_scale + ", minimum-scale=" + initial_scale + ", user-scalable=no"), domEle.firstElementChild) {
+                domEle.firstElementChild.appendChild(viewport)
+            } else {
+                var m = dom.createElement("div");
+                m.appendChild(viewport), dom.write(m.innerHTML)
+            }
+        }
+        win.dpr = v;
+        win.addEventListener("resize", function() {
+            clearTimeout(timeCode), timeCode = setTimeout(resize, 300)
+        }, false);
+        win.addEventListener("pageshow", function(b) {
+            b.persisted && (clearTimeout(timeCode), timeCode = setTimeout(resize, 300))
+        }, false);
+        /* 个人觉得没必要完成后就把body的字体设置为12
+         "complete" === dom.readyState ? dom.body.style.fontSize = 12 * v + "px" : dom.addEventListener("DOMContentLoaded", function() {
+         //dom.body.style.fontSize = 12 * v + "px"
+         }, false);
+         */
+        resize();
+    }(window);
+</script>
+<body>
+    <div class="container">
+        <div class="header_num"><span>2,638</span>人已经集齐</div>
+        <div class="header_activity"><img src="images/guize2.png"></div>
+        <div class="header_start"><img src="images/open_time.png"></div>
+        <div class="zhuangshi"><img src="images/zhuangshi.png"></div>
+        <div class="huawen"><img src="images/huawen.png"></div>
+        <div class="dikuang">
+            <p>红包池金额<span>1000元</span></p>
+        </div>
+        <div class="text2"><img src="images/text2.png"></div>
+        <div class="btn">
+            <img src="images/hongbaopi.png" class="hongbaopi">
+            <img src="images/btn1.png" class="btn1">
+            <img src="images/btn2.png" class="btn2">
+            <img src="images/btn3.png" class="btn3">
+        </div>
+        <div class="jizi">
+            <div class="dong">
+                <img src="images/dong.png">
+                <img src="images/dong_f.png">
+            </div>
+            <div class="fang">
+                <img src="images/fang.png">
+                <img src="images/fang_f.png">
+            </div>
+            <div class="qi">
+                <img src="images/qi.png">
+                <img src="images/qi_f.png">
+            </div>
+            <div class="che">
+                <img src="images/che.png">
+                <img src="images/che_f.png">
+            </div>
+        </div>
+        <div class="logo"><img src="images/logo.png"></div>
+        <!--注册页-->
+        <div class="register">
+            <div class="close"></div>
+            <div class="page">
+                <form action="form1">
+                    <input type="text" name="userName" class="userName" placeholder="输入您的姓名">
+                    <input type="tel" name="tel" class="tel" placeholder="输入您的手机号码">
+                    <p>为了您能更好的参与活动，请填写正确的姓名以及手机号码。</p>
+                    <button>提交信息</button>
+                </form>
+            </div>
+        </div>
+        <!--活动规则-->
+        <div class="guize">
+            <div class="close"></div>
+            <div class="page">
+                <h3>活动规则</h3>
+                <div class="txt">
+                    <p>活动时间：<br/>
+                        即日起至2017年5月1日16：00<br/>
+                        活动规则说明：<br/>
+                        <span>集齐“东方汽车”</span>四个字即可获取现金红包，
+                        红包金额随机，数量有限，先到先得，抢完
+                        为止，每人仅限领取1次红包。随着集齐人数
+                        的增加，红包池金额也会发生变化具体如下：
+                        集齐用户达到500人，红包池金额1000元
+                        集齐用户达到1000人，红包池金额2000元
+                        集齐用户达到2000人，红包池金额4000元
+                        集齐用户达到3000人，红包池金额6000元
+                        粉丝专属按钮为关注礼，通过<span>“江苏东方汽车”（auto_96056）</span>>订阅号可获得“车”
+                        字；呼朋唤友来帮忙集齐其他三个字吧，全部集齐后可于5月1日上午10:00整点击抢红包按钮，开
+                        自己的幸运红包<span>（活动于5月1日16:00结束，结束后将无法领取红包，不要忘记哦！）</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--抢红包未开启-->
+        <div class="qiang">
+            <div class="close"></div>
+            <div class="page">
+                <p>5月1日开启抢红包</p>
+                <div class="logo_x"></div>
+            </div>
+        </div>
+        <!--开红包界面-->
+        <div class="kai">
+            <div class="close"></div>
+            <div class="page">
+                <div class="hongyun"><img src="images/hongyun.png"></div>
+                <div class="open"><img src="images/open.png"></div>
+                <div class="logo_x"><img src="images/logo_x.png"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".close").click(function(){
+            $(".register").css("display","none");
+            $(".guize").css("display","none");
+            $(".qiang").css("display","none");
+            $(".kai").css("display","none");
+        });
+        $(".dikuang p").click(function(){
+            $(".register").css("display","block");
+        });
+        $(".header_activity img").click(function(){
+            $(".guize").css("display","block");
+        });
+        $(".btn1").click(function(){
+            $(".qiang").css("display","block");
+        });
+        $(".btn2").click(function(){
+            $(".jizi>div img:nth-child(1)").css("display","block");
+            $(".jizi>div img:nth-child(2)").css("display","none");
+        });
+        $(".open").click(function(){
+           $(this).addClass("open2");
+        });
+    </script>
+</body>
+</html>
